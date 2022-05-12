@@ -1,4 +1,4 @@
-![PANGAEA Logo](https://www.pangaea.de/assets/v.0992e54384ba72809c57ddb8e68bc2e9/layout-images/pangaea-logo.png)
+![PANGAEA Logo](https://www.pangaea.de/assets/layout-images/pangaea-logo.png)
 
 # Welcome to our PANGAEA Community Workshop Github page
 
