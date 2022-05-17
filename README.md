@@ -1,4 +1,4 @@
-![PANGAEA Logo](https://cloud.marum.de/s/JynaKdf9L8LRRTR/download/PANGAEA_Banner_CWS.png)
+![PANGAEA Logo](banner.png)
 
 # Welcome to our PANGAEA Community Workshop Github page
 
