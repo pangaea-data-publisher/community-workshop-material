@@ -2,6 +2,6 @@
 
 # Welcome to our PANGAEA Community Workshop Github page
 
-Once fully established, this repository will host training material, information and code used in our PANGAEA Community Workshop series.
+This repository will host training material, information and code used in our PANGAEA Community Workshop series.
 
-**Please be aware that nothing can be found here for now. It is work in progress…**
+**This page is work in progress…**
