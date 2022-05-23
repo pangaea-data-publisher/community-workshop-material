@@ -1,1 +1,1 @@
-#### This folder contains practice examples for the Python package Pangaeapy
+#### This folder contains practice examples for the Python package PangaeaPy
