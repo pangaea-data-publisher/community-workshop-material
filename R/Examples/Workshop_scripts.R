@@ -35,6 +35,13 @@ for (i in 1:nrow(PAGES_Sweden)) {
   PAGES_Sweden_data <- bind_rows(PAGES_Sweden_data, geochem)
 }
 
+#=============== DOWNLOAD DATA FILES VIA PANGAEAR CACHE ===================
+#check and set cache path of pangaear
+pg_cache$cache_path_get()
+pg_cache$cache_path_set(full_path = "~/R/Examples")
+#now data files are downloaded into that folder when executing pg_data()
+#does not work for multiple binary files
+
 #=============== DOWNLOAD MANY BINARY FILES ==================
 
 #create a folder for download
