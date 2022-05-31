@@ -78,6 +78,7 @@ for (i in (1:nrow(table))){
 
 #=============== 7. DOWNLOAD MANY FILES ==================
 #this concerns datasets published before 2020 (in .tab file the full path is given, not just the file name)
+# example dataset: https://doi.pangaea.de/10.1594/PANGAEA.910179?format=html#download with several netcdf files
 
 list_of_files<-pg_data(doi="10.1594/PANGAEA.910179")
 list_of_files<-list_of_files[[1]]$data
