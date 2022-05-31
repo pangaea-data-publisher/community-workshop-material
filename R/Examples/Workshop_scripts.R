@@ -6,8 +6,8 @@ library(dplyr)
 
 
 #=============== 1. SEARCH (by PROJECT) =================
-
-# website: https://www.pangaea.de/?q=project:label:PAGES_C-PEAT
+# Documentation of PANGAEA search: https://wiki.pangaea.de/wiki/PANGAEA_search
+# Website: https://www.pangaea.de/?q=project:label:PAGES_C-PEAT
 # search with pg_search: maximum = 500 records (set with count, continue with offset)
 PAGES <- pg_search("project:label:PAGES_C-PEAT", count = 100)
 
