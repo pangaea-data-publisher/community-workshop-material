@@ -1,18 +1,20 @@
+install.packages('pangaear')
+install.packages('dplyr')
 library(pangaear) #see package details at https://github.com/ropensci/pangaear
 library(dplyr)
 #library(ggplot2)
 
-#=============== SEARCH (by PROJECT) =================
+#=============== 1. SEARCH (by PROJECT) =================
 
 # website: https://www.pangaea.de/?q=project:label:PAGES_C-PEAT
 # search with pg_search: maximum = 500 records (set with count, continue with offset)
-PAGES <- pg_search("project:label:PAGES_C-PEAT", count = 1000)
+PAGES <- pg_search("project:label:PAGES_C-PEAT", count = 100)
 
 #PAGES <- pg_search("project:label:PAGES_C-PEAT", count = 500, offset = 500)
 #like this one can download all 875 dataset citations
 PAGES <- rbind(PAGES, pg_search("project:label:PAGES_C-PEAT", count = 500, offset = 500))
 
-#=============== GET DATA =================
+#=============== 2. GET DATA =================
 #download single dataset - first list, then -> data frame
 Joey_core12 <- pg_data(doi="10.1594/PANGAEA.890405")
 Joey_core12 <- Joey_core12[[1]]$data
