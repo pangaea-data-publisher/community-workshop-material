@@ -7,7 +7,11 @@ library(dplyr) # set of tools for data manipulation, see details at https://dply
 # Documentation of PANGAEA search: https://wiki.pangaea.de/wiki/PANGAEA_search
 # Website: https://www.pangaea.de/?q=project:label:PAGES_C-PEAT
 # search with pg_search: maximum = 500 records (set with count, continue with offset)
-PAGES <- pg_search("project:label:PAGES_C-PEAT")
+PAGES <- pg_search("project:label:PAGES_C-PEAT", count = 1000)
+PAGES1 <- pg_search("project:label:PAGES_C-PEAT", count = 500)
+PAGES2 <- pg_search("project:label:PAGES_C-PEAT", count = 500, offset = 500)
+
+PAGES_all <- rbind(PAGES1, PAGES2)
 
 # PAGES <- pg_search("project:label:PAGES_C-PEAT", count = 500, offset = 500)
 # like this one can download all 875 dataset citations:
@@ -18,7 +22,7 @@ PAGES <- rbind(PAGES, pg_search("project:label:PAGES_C-PEAT", count = 500, offse
 # download single dataset (rendomly selected from the search result above)
 # pg_data returns list, data table -> data frame
 Joey_core12 <- pg_data(doi="10.1594/PANGAEA.890405")
-Joey_core12 <- Joey_core12[[1]]$data
+Joey_core12 <- Joey_core12[[1]][["data"]]
 
 # create a folder for download
 getwd()
@@ -28,6 +32,7 @@ folderpath <- "R/Files/"
 # write table as txt file
 # paste function: concatenate vectors by converting them into character (list of vectors, separator), paste0() - without separator
 write.table(Joey_core12, file=paste0(folderpath,"Joey_core12.txt"), row.names = FALSE, quote = FALSE, sep = "\t", na = "")
+
 
 #=============== 3. FILTER SEARCH RESULTS =================
 # restrict the search by geographical coordinates with an attribute bbox=c(minlon, minlat, maxlon, maxlat)
@@ -46,13 +51,21 @@ PAGES_Sweden <- filter(PAGES_Sweden, grepl("Geochemistry", citation))
 PAGES_Sweden_data <- data.frame()
 
 # loop over all filtered datastes
+
 # function bind_rows from dplyr package: unlike for rbind, the number of columns of the dataframes doesn't need to be the same
 for (i in 1:nrow(PAGES_Sweden)) {
   geochem <- pg_data(doi=PAGES_Sweden[i,2])
+  # extract georeferencing
+  latitude <- geochem[["doi"]][["metadata"]][["events"]][["LATITUDE"]]
+  longitude <- geochem[["doi"]][["metadata"]][["events"]][["LONGITUDE"]]
   geochem <- geochem[[1]]$data
   # add columns identifying unique source of data for further attribution
   geochem$DOI <- as.character(PAGES_Sweden[i,2])
   geochem$citation <- as.character(PAGES_Sweden[i,5])
+  # add columns with georeferencing
+  geochem$latitude <- latitude
+  geochem$longitude <- longitude
+  # append table
   PAGES_Sweden_data <- bind_rows(PAGES_Sweden_data, geochem)
 }
 
@@ -91,6 +104,7 @@ for (i in (1:nrow(table))){
 
 list_of_files <- pg_data(doi="10.1594/PANGAEA.910179")
 list_of_files <- list_of_files[[1]]$data
+View(list_of_files)
 
 for (i in (1:nrow(list_of_files))){
   download.file(as.character(list_of_files$'URL file'[i]), destfile = paste0(folderpath, list_of_files$'File name'[i]))
