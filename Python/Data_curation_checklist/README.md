@@ -1,4 +1,4 @@
-![PANGAEA Logo](banner.png)
+![PANGAEA Logo](../../banner.png)
 
 #### PANGAEA Data Curation Checklist
 Version: 0.9.0<br>
