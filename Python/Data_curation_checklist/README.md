@@ -13,4 +13,4 @@ Run this notebook in:
 * GoogleColab <a target="_blank" href="https://colab.research.google.com/github/pangaea-data-publisher/community-workshop-material/blob/master/Python/Data_curation_checklist/Data_curation_checklist.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
-* MyBinder [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fgitlab.gwdg.de%2Fjoerg.bruenecke1%2Fgfowinterschoolmo/HEAD)
+* [MyBinder](https://mybinder.org/v2/git/https%3A%2F%2Fgitlab.gwdg.de%2Fjoerg.bruenecke1%2Fgfowinterschoolmo/HEAD)
