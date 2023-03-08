@@ -19,7 +19,7 @@ PAGES_all <- rbind(PAGES1, PAGES2)
 PAGES <- rbind(PAGES, pg_search("project:label:PAGES_C-PEAT", count = 500, offset = 500))
 
 #=============== 2. GET DATA =================
-# download single dataset (rendomly selected from the search result above)
+# download single dataset (randomly selected from the search result above)
 # pg_data returns list, data table -> data frame
 Joey_core12 <- pg_data(doi="10.1594/PANGAEA.890405")
 Joey_core12 <- Joey_core12[[1]][["data"]]
