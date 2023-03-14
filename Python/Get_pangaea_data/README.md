@@ -1,3 +1,5 @@
+![PANGAEA Logo](../../banner.png)
+
 # **How to retrieve data from PANGAEA**
 
 Version: 0.0.2<br>
