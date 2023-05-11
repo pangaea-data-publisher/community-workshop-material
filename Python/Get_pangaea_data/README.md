@@ -4,7 +4,7 @@
 
 Version: 0.0.2<br>
 By: Michael Oellermann, Kathrin Riemann-Campe<br>
-Last updated: 2023-03-14
+Last updated: 2023-05-10
 
 This notebook will guide you how to retrieve diverse earth- and environmental data and its metadata from the [PANGAEA data repository](https://www.pangaea.de) using Python. It uses the [PangaeaPy package](https://github.com/pangaea-data-publisher/pangaeapy), to facilitate the data download.
 
