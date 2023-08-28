@@ -2,7 +2,7 @@
 
 #### PANGAEA Data Curation Checklist
 Version: 0.1.0<br>
-By: Dana Ransby, based on Python version by Michael Oellermann, Kathrin Riemann-Campe<br>
+By: Dana Ransby, based on [Python version](../../Python/Data_curation_checklist)  by Michael Oellermann, Kathrin Riemann-Campe<br>
 Last updated: 2023-08-28
 
 This script aims to help you, to check and resolve some common problems and issues with data tables, before submitting them to a data repository like [PANGAEA](https://www.pangaea.de/submit/).
