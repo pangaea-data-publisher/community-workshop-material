@@ -1,9 +1,9 @@
 ![PANGAEA Logo](../../banner.png)
 
 #### PANGAEA Data Curation Checklist
-Version: 1.0<br>
+Version: 1.1<br>
 By: Michael Oellermann, Kathrin Riemann-Campe<br>
-Last updated: 2023-09-14
+Last updated: 2023-10-30
 
 This notebook aims to help you, to check and resolve some common problems and issues with data tables, before submitting them to a data repository like [PANGAEA](https://www.pangaea.de/submit/).
 
