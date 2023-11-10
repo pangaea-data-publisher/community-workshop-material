@@ -19,4 +19,4 @@ Run this notebook in:
 
 Michael Oellermann/this work was supported by the German Research Foundation DFG under the grant agreement number  442032008 (NFDI4Biodiversity). The project is part of NFDI, the National Research Data Infrastructure Programme in Germany.
 
-![Alt text](NFDI_4_Biodiversity___Logo_Positiv.png)
+<img src="./NFDI_4_Biodiversity___Logo_Positiv.png" width="300">
