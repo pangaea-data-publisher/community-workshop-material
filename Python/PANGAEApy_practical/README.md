@@ -1,6 +1,6 @@
 ![PANGAEA Logo](../../banner.png)
 
-# **pangaeapy practical**
+# **PANGAEApy practical**
 ## **How to search and download data from PANGAEA**
 
 Version: 0.1.0<br>
@@ -15,3 +15,8 @@ Run this notebook in:
 </a>
 
 Find solutions to quizzes in this [notebook](https://colab.research.google.com/github/pangaea-data-publisher/community-workshop-material/blob/master/Python/PANGAEApy_practical/pangaeapy_practical_solutions.ipynb)
+
+
+#### Additional examples related to PANGAEApy_practical
+* detailed examples on metadata extraction in [pangaeapy_detailed_metadata_search](./PANGAEApy_practical/pangaeapy_detailed_metadata_search.ipynb)
+* example to extract project-specific information in [PANGAEA_access_metadata_per_project](./PANGAEApy_practical/PANGAEA_access_metadata_per_project.ipynb)
