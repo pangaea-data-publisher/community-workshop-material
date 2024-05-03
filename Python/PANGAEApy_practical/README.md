@@ -3,9 +3,9 @@
 # **PANGAEApy practical**
 ## **How to search and download data from PANGAEA**
 
-Version: 0.1.0<br>
+Version: 0.1.1<br>
 By: Kathrin Riemann-Campe and Michael Oellermann<br>
-Last updated: 2024-05-02
+Last updated: 2024-05-03
 
 This notebook will guide you how to retrieve diverse earth- and environmental data and its metadata from the [PANGAEA data repository](https://www.pangaea.de) using Python. It uses the [PangaeaPy package](https://pypi.org/project/pangaeapy/), to facilitate the data download.
 
