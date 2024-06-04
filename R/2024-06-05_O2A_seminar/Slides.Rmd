@@ -1,0 +1,50 @@
+---
+title: "Data tables cleaning – checklist in R"
+author: "Dana Ransby, PANGAEA/AWI"
+date: "2024-06-05"
+output:
+  slidy_presentation: default
+  beamer_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Overview
+
+- Discuss several aspects of tabular data cleaning using R
+- Presentation of a code in RStudio
+- Create an untidy table and clean it
+- Ideas how to deal with common issues
+- Goal: clean data for example for data submission to a data repository
+
+
+## Dealing with common issues
+
+- Rows with comments / aggregated statistics
+- Columns with NaN only
+- Different ways of marking missing values
+- Leading/trailing/double white spaces
+- Decimal separator
+- Convert data types
+- Date and time in separate columns
+- Several values in a single cell
+- Convert latitude / longitude to decimal format
+
+## Dealing with common issues (continued)
+- Feature with abbreviations (Threatened status)
+- Species column with misspelled species names
+- Parameter names (table headers)
+- Parameter with unit, that needs rescaling
+- Unrealistically high number of decimal points
+- Save table
+
+## Submit your cleaned data to PANGAEA
+
+Congratulations! You finished cleaning your data, which was an important step forward to make your data more accessible, understandable and useable for future users. Now you are ready to [submit your data file(s) to PANGAEA](https://www.pangaea.de/submit/).
+
+## Resources
+
+- [PANGAEA Best practice manuals and templates](https://wiki.pangaea.de/wiki/Best_practice_manuals_and_templates)
+-  [PANGAEA workshop materials for R and Python](https://github.com/pangaea-data-publisher/community-workshop-material/tree/master) 
