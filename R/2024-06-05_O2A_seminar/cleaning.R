@@ -1,7 +1,15 @@
+# Data tables cleaning – checklist in R
+# Version: 0.2.0
+# By: Dana Ransby, based on "PANGAEA Data Curation Checklist" Python version by Michael Oellermann, Kathrin Riemann-Campe
+# Last updated: 2024-06-05
+# see: https://github.com/pangaea-data-publisher/community-workshop-material/
+
 # Import libraries --------------------------------------------------------
+# Tidyverse: https://www.tidyverse.org/
 library(dplyr)
 library(stringr)
 library(lubridate)
+# Others
 # install.packages("worrms")
 library(worrms)
 library(httr)
@@ -9,6 +17,7 @@ library(httr)
 # Create practice data tables --------------------------------------------------------
 
 # Function to create fake data
+
 create_fake_df <- function() {
   # Add numeric features
   df <- data.frame(seq(from = 69.2, to = 89, by = 0.1),
@@ -58,7 +67,7 @@ create_fake_df <- function() {
   df$Location <- sprintf("%3s", df$Location)
   df$Location <- sprintf("%-2s", df$Location)
   # Add double white spaces in between strings
-  df$Location[3] <- "Bremerhaven,     Germany"
+  df$Location[3] <- "  Bremerhaven,     Germany "
   
   # Add comma separated value to latitude
   df$`latitude (deg)` <- as.character(df$`latitude (deg)`)
@@ -80,7 +89,7 @@ create_fake_df <- function() {
   View(df)
   
   return(df)
-}
+} # end of create_fake_df
 
 df <- create_fake_df()
 head(df)
@@ -150,6 +159,7 @@ df$date <- format(df$date, "%Y-%m-%dT%H:%M:%S")
 # Remove redundant time column
 df <- subset(df, select = -c(time))
 
+
 # Coordinates  ---------------------------------------------------------
 
 # Split cell by semicolon separator
@@ -161,7 +171,7 @@ df <- subset(df, select = -c(`lat/lon`))
 
 dms2dec <- function(dms, separators = c("º", "°", "\'\'", "\'", "’", "’’", "\"", "\\?")) {
   
-  # version 1.4 (2 Feb 2022) source("https://raw.githubusercontent.com/AMBarbosa/unpackaged/master/dms2dec", encoding = "UTF-8")
+  # modified after version 1.4 (2 Feb 2022) source ("https://github.com/AMBarbosa/unpackaged/blob/master/dms2dec", encoding = "UTF-8")
   # dms: a vector of latitude or longitude in degrees-minutes-seconds-hemisfere, e.g. 41° 34' 10.956" N (with or without spaces)
   # separators: the characters that are separating degrees, minutes and seconds in 'dms'; mind these are taken in the order in which they appear and not interpreted individually, i.e. 7'3º will be taken as 7 degrees, 3 minutes! input data are assumed to be properly formatted
   
@@ -237,7 +247,7 @@ unique(df$species)
 
 # Parameter (header) naming -----------------------------------------------
 
-params <-read.csv("https://www.pangaea.de/lists/parameter/all-byname", sep = "\t")
+params <- read.csv("https://www.pangaea.de/lists/parameter/all-byname", sep = "\t")
 # Check table size
 cat(paste("There are currently", nrow(params), "parameters available in PANGAEA\n"))
 
@@ -270,11 +280,14 @@ df$`DEPTH, water [m]` <- df$`DEPTH, water [m]` / 100
 
 # Rounding
 df$`Temperature, water [°C]` <- round(df$`Temperature, water [°C]`, digits = 3)
+df$`Longitude 2 []` <- round(df$`Longitude 2 []`, digits = 2)
+
 
 # URLs --------------------------------------------------------------------
 
 df$'Uniform resource locator/link to reference []' <- "https://doi.org/10.1594/PANGAEA.945749"
 df$'Uniform resource locator/link to reference []'[1] <- "https://doi.org/10.1594/PANGAEA.94574X"
+df$'Uniform resource locator/link to reference []'[5:198] <- "https://pangaea.de"
 
 # Function to check if URL is valid
 check_url <- function(url) {
