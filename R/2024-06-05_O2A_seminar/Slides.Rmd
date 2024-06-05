@@ -33,11 +33,13 @@ knitr::opts_chunk$set(echo = FALSE)
 - Convert latitude / longitude to decimal format
 
 ## Dealing with common issues (continued)
-- Feature with abbreviations (Threatened status)
+- Replace abbreviations
 - Species column with misspelled species names
 - Parameter names (table headers)
 - Parameter with unit, that needs rescaling
 - Unrealistically high number of decimal points
+- URL check
+- Add a column
 - Save table
 
 ## Submit your cleaned data to PANGAEA
