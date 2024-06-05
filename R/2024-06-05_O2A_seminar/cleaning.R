@@ -117,7 +117,7 @@ str(df)
 df <- df[ , colSums(is.na(df)) != nrow(df)]
 
 # Remove ambiguous missing values
-df$`water depth (cm)` <- gsub("-999.9|n/a", NA, df$`water depth (cm)`)
+df$`water depth (cm)` <- gsub("-999.9|n/a|NaN", NA, df$`water depth (cm)`)
 
 # Check for commas as decimal separators
 # List unique values
@@ -163,6 +163,7 @@ df <- subset(df, select = -c(time))
 # Coordinates  ---------------------------------------------------------
 
 # Split cell by semicolon separator
+#  "[" is equivalent to function(x) x[i], which extracts the i-th element
 df$lat <- sapply(strsplit(df$`lat/lon`, ";"), "[", 1)
 df$lon <- sapply(strsplit(df$`lat/lon`, ";"), "[", 2)
 
@@ -263,6 +264,7 @@ matching_params <- params[grepl("Latitude", params$Parameter, ignore.case = TRUE
 matching_params
 
 # Find similar parameters for "latitude" (case-insensitive)
+# agrep: Fuzzy matching
 similar_params <- params[agrepl("latitude", params$Parameter, ignore.case = TRUE), ]
 
 # Display the similar parameters
@@ -290,6 +292,7 @@ df$'Uniform resource locator/link to reference []'[1] <- "https://doi.org/10.159
 df$'Uniform resource locator/link to reference []'[5:198] <- "https://pangaea.de"
 
 # Function to check if URL is valid
+# https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
 check_url <- function(url) {
   response <- try(GET(url))
   return(response$status_code) #response$status_code == 200
