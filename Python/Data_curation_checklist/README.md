@@ -1,9 +1,9 @@
 ![PANGAEA Logo](../../banner.png)
 
 #### PANGAEA Data Curation Checklist
-Version: 1.1<br>
-By: Michael Oellermann, Kathrin Riemann-Campe<br>
-Last updated: 2023-10-30
+Version: 1.2<br>
+By: Kathrin Riemann-Campe, Michael Oellermann<br>
+Last updated: 2024-10-16
 
 This notebook aims to help you, to check and resolve some common problems and issues with data tables, before submitting them to a data repository like [PANGAEA](https://www.pangaea.de/submit/).
 
@@ -15,8 +15,3 @@ Run this notebook in:
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-# Acknowledgements
-
-Michael Oellermann/this work was supported by the German Research Foundation DFG under the grant agreement number  442032008 (NFDI4Biodiversity). The project is part of NFDI, the National Research Data Infrastructure Programme in Germany.
-
-<img src="./NFDI_4_Biodiversity___Logo_Positiv.png" width="300">
